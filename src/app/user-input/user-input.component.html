@@ -1,4 +1,7 @@
 <div id="userInputContainer">
-        <input type="text" name="activity" id="activity" placeholder="Enter Activity">
-        <button type="submit">Submit</button>
+        <form action="" method="post" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <input formControlName= "inputForm" type="text" name="activity" id="activity" placeholder="Enter Activity" required minlength="3">
+                <button type="submit">Submit</button>
+        </form>
+        
 </div>

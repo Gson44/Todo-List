@@ -1,10 +1,15 @@
-<div id="container">
-    <div id="activity">
-        <p>Activity 1</p>
+<div *ngIf="activitiesData()?.length; else noActivities">
+    <div *ngFor="let item of activitiesData()">
+      <div id="activity">
+        <p>{{ item.name }}</p>
         <div id="userInputContainer">
-            <i class="material-icons" style="color:green">check</i>
-            <i class="material-icons" style="color:red">delete</i>
+          <i class="material-icons" (click)="complete(item.id)" style="color:green">check</i>
+          <i class="material-icons" (click)="delete()" style="color:red">delete</i>
         </div>
-        
+      </div>
     </div>
-</div>
+  </div>
+  <ng-template #noActivities>
+    <p>No activities available.</p>
+  </ng-template>
+  

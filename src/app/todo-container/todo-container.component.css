@@ -1,38 +1,69 @@
+/* Main container */
 #container {
     max-width: 100%;
     height: 100%;
-    
+    display: flex;
+    flex-direction: column; /* Ensure proper stacking for overall layout */
+    padding: 10px; /* Add padding for spacing */
 }
+
+/* Activity section */
 #activity {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Vertically align items */
     border-bottom: 1px solid gray;
-    
+    padding: 10px 0; /* Add padding for better spacing */
 }
 
-#activity, p {
-    font-size: 32px;
+#activity p {
+    margin: 0; /* Remove default margin */
+    font-size: 28px; /* Adjust for mobile readability */
     font-family: Arial, Helvetica, sans-serif;
+    flex-grow: 1; /* Allow text to take available space */
 }
 
-
-
-#userInputContainer, i {
-    margin-right: 50px;
-    margin-top: 8px;
+/* User input container and icon */
+#userInputContainer i {
+    margin: 0 10px; /* Add horizontal margin */
     cursor: pointer;
-    font-size: 68px;
+    font-size: 36px; /* Scale down icons for smaller screens */
 }
 
-@media (max-width: 600px) {
-    #userInputContainer > i {
-        font-size: 13vw;
-        margin-right: 0px;
-        margin-left: 50px;
-        margin-bottom: 0px;
+/* Responsive styling for mobile devices */
+@media (max-width: 380px) {
+    #activity {
+        flex-direction: row; /* Ensure items remain inline horizontally */
+        justify-content: space-between; /* Proper spacing between items */
+        gap: 0; /* Remove unnecessary gaps for inline alignment */
+        padding: 5px; /* Adjust padding for smaller screens */
     }
-    #activity, p {
-        font-size: 7vw;
-        
+
+    #activity p {
+        font-size: 5vw; /* Dynamically adjust font size */
+        flex-grow: 1; /* Allow text to expand */
     }
+
+    #userInputContainer i {
+        font-size: 8vw; /* Scale icons dynamically */
+        margin: 0 5px; /* Adjust margins for better spacing */
+    }
+
+    #container {
+        padding: 10px; /* Keep container spacing consistent */
+    }
+}
+
+/* General form styles */
+input[type="text"] {
+    width: calc(100% - 20px); /* Adjust width to fit the screen with margins */
+    padding: 10px; /* Padding inside input box */
+    margin-bottom: 10px; /* Spacing from button */
+    font-size: 16px; /* Adjust font size for better readability */
+}
+
+button {
+    width: 100%; /* Full-width button for small screens */
+    padding: 10px; /* Padding inside button */
+    font-size: 16px; /* Adjust font size */
 }

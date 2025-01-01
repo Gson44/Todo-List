@@ -5,29 +5,51 @@
     width: 100%;
     display: flex;
     justify-content: center;
-   
+    align-items: center; /* Ensures vertical alignment */
+    background-color: #f9f9f9; /* Optional: Add a background for better visibility */
+    padding: 10px 0; /* Add padding for breathing space */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ input[type=text] {
+    font-size: 3vw; /* Scale font size dynamically */
+    width: 70%; /* Adjust width for smaller screens */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
 
-#userInputContainer > input[type=text] {
-    font-size: 62px;
-}
-
-#userInputContainer > button {
+button {
     border: none;
-    font-size: 32px;
+    font-size: 1.5vw; /* Scale button font size dynamically */
     background-color: orange;
     color: white;
-    margin-left: 20px;
-    padding: 10px;
-    border-radius:5px ;
+    margin-left: 10px; /* Adjust margin for smaller screens */
+    padding: 14px 16px; /* Smaller padding for better fit */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    transition: background-color 0.3s; /* Add hover effect */
 }
 
+ button:hover {
+    background-color: darkorange;
+}
 
-@media (max-width: 600px) {
-    #userInputContainer > input[type=text] {
-        font-size: 6vw;
+@media (max-width: 480px) {
+    input[type=text] {
+        font-size: 4vw; /* Reduce font size further */
+        width: 65%; /* Adjust width for small screens */
     }
-    #userInputContainer > button {
-        font-size: 5vw;
+
+     button {
+        font-size: 4vw; /* Match button font size to smaller input size */
+        padding: 6px 10px; /* Adjust padding for smaller buttons */
+        margin-left: 8px; /* Slightly reduce left margin */
     }
 }
